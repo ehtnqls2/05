@@ -4,16 +4,22 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int sum=0;
-	int x,cnt;
-	 
-	printf("정수를 입력하세요:");
-	scanf("%d",&x);
+	int x,y,z;
+	char c;
 	
-	for (cnt=0;cnt<=x;cnt++)
-		sum=sum+cnt;
-	 
-	printf("%d",sum);
+	printf("연산식을 입력해주세요:");
+	scanf("%d %c %d",&x,&c,&y);
 	
+	if(c=='+')
+		z=x+y;		
+	else if(c=='-')
+		z=x-y;
+	else if(c=='*')
+		z=x*y;
+	else if(c=='/')
+		z=x/y;
+		
+	printf("결과는 %d입니다.",z);
+		 
 	return 0;
 }
