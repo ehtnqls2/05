@@ -4,22 +4,23 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int x,y,z;
-	char c;
+	int answer=59;
+	int x;
+	int trial=0;
 	
-	printf("연산식을 입력해주세요:");
-	scanf("%d %c %d",&x,&c,&y);
+	do
+	{
+		printf("숫자를 맞춰보세요:");
+		scanf("%d",&x);
+		if(x>answer)
+			printf("high\n");
+		else if(x<answer)
+			printf("low\n"); 
+		trial=trial+1;
+	}
+	while(x!=answer);
 	
-	if(c=='+')
-		z=x+y;		
-	else if(c=='-')
-		z=x-y;
-	else if(c=='*')
-		z=x*y;
-	else if(c=='/')
-		z=x/y;
-		
-	printf("결과는 %d입니다.",z);
-		 
+	printf("%d회 시도했습니다.",trial); 
+	
 	return 0;
 }
